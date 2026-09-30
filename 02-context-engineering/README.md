@@ -64,6 +64,7 @@ Esta tabla conecta la teoría con lo que usan los equipos que trabajan con asist
 | **Archivos de sesión o notas de traspaso** | Historial / memoria | Sincronizar lo que se hizo entre sesiones o entre agentes |
 | **Una rama o carpeta de trabajo por tarea** | Aislamiento | Un contexto limpio y dedicado por tarea |
 
+![diagram-spec](../assets/img/diagram-spec.png)
 
 ### Glosario que vas a usar todo el tiempo
 
@@ -214,7 +215,7 @@ Si el agente **revisa su propio trabajo** (un segundo paso verifica y corrige la
 ```
 
 
-## 5. La decisión central: qué, cuándo y dónde
+## La decisión central: qué, cuándo y dónde
 
 Context engineering no es "poner más cosas". Es **decidir**. Para cada dato, tres preguntas:
 
