@@ -1,0 +1,16 @@
+[
+  {
+    "ticket": "Me cobraron dos veces la cuota de septiembre.",
+    "categoria": "pagos",
+    "urgencia": 2,
+    "resumen": "Cobro duplicado de la cuota de septiembre",
+    "fecha_limite_mencionada": null
+  },
+  {
+    "ticket": "El video de la clase 4 no carga, pero puedo esperar.",
+    "categoria": "tecnico",
+    "urgencia": 4,
+    "resumen": "Video de la clase 4 no carga",
+    "fecha_limite_mencionada": null
+  }
+]
