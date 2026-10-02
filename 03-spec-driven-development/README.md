@@ -1,16 +1,7 @@
 # Spec-Driven Development (SDD)
 
-### Especificar para construir bien cuando trabajas con agentes de IA
 
-*Apunte de clase · Nivel intermedio*
-
-**Al terminar** deberías poder explicar con tus propias palabras qué es SDD, por qué existe y cómo empezar a aplicarlo en un proyecto pequeño.
-
-A lo largo del apunte usaremos **un solo caso**: el sistema de tickets de soporte de una academia de programación. Los estudiantes envían consultas (problemas de acceso, dudas sobre una clase, fallas al entregar un proyecto) y el equipo de soporte las responde.
-
----
-
-## 1. El problema: ¿por qué necesitamos especificar?
+## El problema: ¿por qué necesitamos especificar?
 
 Antes de hablar de IA, piensa en cómo se desarrolla software cuando trabajan solo personas. Casi siempre existe, de forma más o menos formal, esta cadena:
 
@@ -34,7 +25,7 @@ Ahí aparece la pregunta que organiza esta clase:
 
 > **¿Qué cambia cuando parte del trabajo empieza a realizarlo un agente de IA?**
 
----
+
 
 ## 2. ¿Qué es SDD?
 
