@@ -9,11 +9,13 @@ Antes de hablar de IA, piensa en cómo se desarrolla software cuando trabajan so
 problema → requisitos → diseño → implementación → pruebas → verificación
 ```
 
-Alguien entiende un problema, decide qué debe hacer el sistema, lo diseña, lo construye y comprueba que funcione como se esperaba. Cuando esa cadena se rompe, aparecen los problemas conocidos: se construye algo que nadie pidió, se descubre tarde que faltaba un requisito, o dos personas entienden el mismo pedido de forma distinta.
+Alguien entiende un problema, decide qué debe hacer el sistema, lo diseña, lo construye y comprueba que funcione como se esperaba. Cuando esa cadena se rompe, aparecen los problemas conocidos: 
+
+- se construye algo que nadie pidió 
+- se descubre tarde que faltaba un requisito o dos personas entienden el mismo pedido de forma distinta.
 
 Por eso, a lo largo de la historia, surgieron muchas formas de comunicar qué debe construirse: documentos de requisitos, casos de uso, historias de usuario, criterios de aceptación, pruebas escritas antes del código.
 
-> **Idea clave:** la especificación no nació con la IA. El desarrollo de software siempre necesitó alguna forma de decir con claridad qué se quiere construir.
 
 Imagina que alguien de la academia te dice:
 
@@ -27,7 +29,7 @@ Ahí aparece la pregunta que organiza esta clase:
 
 
 
-## 2. ¿Qué es SDD?
+## ¿Qué es SDD?
 
 **Spec-Driven Development (desarrollo guiado por especificaciones)** es una forma de trabajar en la que la especificación es la **referencia explícita** durante todo el desarrollo: sirve para comunicar qué queremos construir, orienta el trabajo y permite comprobar si el resultado cumple lo esperado.
 
@@ -46,13 +48,11 @@ No consiste solo en "escribir un documento antes de programar". Lo importante es
 | **Duración** | Una conversación | Vive con el proyecto | Cambia con frecuencia |
 | **En el caso de los tickets** | "Implementa la regla de tickets atrasados" | "Un ticket sin respuesta del equipo tras 48 horas debe marcarse como atrasado" | La función que calcula y marca el estado |
 
-Un prompt puede **tomar** parte de la spec, pero la spec es el artefacto estable del que se derivan los prompts.
+> Un prompt puede **tomar** parte de la spec, pero la spec es el artefacto estable del que se derivan los prompts.
 
-> **Idea clave:** una spec describe principalmente **qué debe hacer el sistema y bajo qué condiciones**, no necesariamente cómo escribir cada línea de código.
 
----
 
-## 3. Desarrollo tradicional vs. SDD
+## Desarrollo tradicional vs. SDD
 
 SDD no reemplaza las prácticas tradicionales. Las **conserva**: seguimos entendiendo el problema, definiendo requisitos, diseñando, implementando, probando, verificando e iterando.
 
@@ -69,9 +69,8 @@ Las preguntas son las mismas; lo que sube es la importancia de **escribir las re
 
 > **Idea clave:** SDD no elimina el proceso de desarrollo. Hace que la intención y el comportamiento esperado estén definidos de forma explícita y puedan usarse como referencia mientras trabaja el agente.
 
----
 
-## 4. SDD y Context Engineering
+## SDD y Context Engineering
 
 Son dos ideas que se complementan, pero responden preguntas distintas:
 
@@ -96,39 +95,8 @@ SPEC (lo que se quiere construir)
 
 El contexto ayuda al agente a **trabajar bien dentro de tu proyecto**. La spec le dice **qué debe lograr**. Con buen contexto y sin spec, el agente conoce el terreno pero no el destino. Con spec y sin contexto, conoce el destino pero puede desconocer el terreno.
 
----
 
-## 5. Fundamentos de SDD
-
-Estos siete conceptos son la base. Para cada uno: qué es, por qué importa y un ejemplo breve del caso de los tickets.
-
-**Intención.** Es el *para qué* del cambio. Importa porque permite tomar buenas decisiones cuando la spec no cubre algo. *Ejemplo:* que los estudiantes no esperen días sin respuesta y que ningún ticket se pierda.
-
-**Requisitos.** Son las capacidades o condiciones que el sistema debe cumplir para lograr esa intención. Importan porque convierten un deseo en algo concreto. *Ejemplo:* "el sistema debe permitir identificar los tickets que llevan demasiado tiempo sin respuesta".
-
-**Comportamiento esperado.** Describe qué hace el sistema ante situaciones concretas, en términos observables. Importa porque es lo que se puede comprobar. *Ejemplo:* "cuando un ticket lleva 48 horas sin respuesta del equipo, pasa al estado *atrasado*".
-
-**Restricciones.** Son los límites dentro de los cuales debe resolverse. Importan porque evitan que el agente tome decisiones que no corresponden. *Ejemplo:* no cambiar la estructura de usuarios; no agregar dependencias nuevas.
-
-**Criterios de aceptación.** Son las condiciones que debemos poder comprobar para dar el trabajo por cumplido. Importan porque convierten "creo que funciona" en "puedo demostrar que funciona". *Ejemplo:* "dado un ticket abierto hace 49 horas sin respuesta, cuando se ejecuta la revisión, entonces su estado es *atrasado*".
-
-**Verificación.** Es comprobar, con evidencia, que lo construido cumple lo especificado. Importa porque un código que se ve bien no es lo mismo que un código correcto. *Ejemplo:* ejecutar pruebas que corresponden a cada criterio.
-
-**Iteración.** Es el ajuste continuo. Importa porque, al verificar, a veces el error está en el código y otras veces en la spec. *Ejemplo:* al probar, descubres que "48 horas" no aclaraba si se cuentan fines de semana.
-
-### Cómo se conectan
-
-```text
-necesidad → requisito → especificación → implementación → prueba → verificación
-```
-
-Esa cadena permite la **trazabilidad**: poder responder, para cualquier parte del sistema, *"¿qué requisito justifica esto?"* y, para cualquier requisito, *"¿dónde se construyó y cómo se comprobó?"*. No hace falta un proceso pesado; basta con poder seguir el hilo entre lo que se pidió y lo que se construyó.
-
-> **Piénsalo:** si hoy alguien te pregunta por qué un ticket aparece como "atrasado", ¿sabrías indicar el requisito que lo explica y la prueba que lo comprueba?
-
----
-
-## 6. ¿Qué contiene una buena spec?
+## ¿Qué contiene una buena spec?
 
 No existe una plantilla universal obligatoria. Lo útil es entender **para qué sirve cada componente**:
 
@@ -145,23 +113,8 @@ No existe una plantilla universal obligatoria. Lo útil es entender **para qué 
 
 Una spec pequeña puede tener solo algunos de estos elementos. Una spec para algo crítico, más. La regla práctica: **incluye lo que, si faltara, obligaría al agente a adivinar algo importante**.
 
-### Especificar comportamiento vs. dictar implementación
 
-**Especificar comportamiento:**
-
-> "Cuando un usuario autenticado solicite sus tickets, el sistema debe devolver únicamente los tickets asociados a ese usuario."
-
-**Dictar implementación:**
-
-> "Crea `getUserTickets()` en `tickets.service.js` y usa esta consulta SQL."
-
-La primera frase dice **qué debe cumplirse**, y cualquier implementación correcta la satisface. La segunda fija **una forma concreta de hacerlo**: limita las soluciones posibles, depende de detalles que pueden cambiar y, si esa forma no era la mejor, el agente la seguirá igual.
-
-Eso no significa que nunca se deba indicar el *cómo*. Si hay una restricción real ("debe usarse la base de datos existente"), va en la spec como **restricción**. La diferencia es que en la primera frase se pide un resultado, y en la segunda se dicta un procedimiento.
-
----
-
-## 7. Tipos de SDD (solo como contexto)
+## Tipos de SDD (solo como contexto)
 
 "SDD" es un término todavía en evolución: distintas comunidades y herramientas lo usan de formas diferentes. Conviene distinguir dos niveles:
 
@@ -178,9 +131,8 @@ Una clasificación que circula con frecuencia distingue tres grados de uso de la
 
 Es una forma de ordenar las ideas, **no una taxonomía oficial**. Para empezar en proyectos pequeños, lo más práctico es *spec-first*, y mantener la spec actualizada cuando el comportamiento cambia.
 
----
 
-## 8. ¿Cómo se trabaja con SDD?
+## ¿Cómo se trabaja con SDD?
 
 Este flujo es general e independiente de cualquier herramienta:
 
@@ -222,9 +174,8 @@ Los pasos 1 a 6 definen **qué** construir; el 7, **cómo** abordarlo; del 8 al 
 
 > **Idea clave:** el agente puede ayudar a investigar, proponer, planificar, implementar, probar y revisar; la persona sigue siendo responsable de definir la intención y validar que el resultado sea correcto. El agente colabora, **no es la autoridad**.
 
----
 
-## 9. El caso completo: de un pedido ambiguo a una verificación
+## El caso completo: de un pedido ambiguo a una verificación
 
 Recorramos el caso de los tickets de principio a fin.
 
@@ -308,9 +259,9 @@ Al revisar el caso límite de las "48 horas", surge una pregunta que la spec no 
 
 > **Idea clave:** SDD no consiste en escribir un documento por escribirlo. La spec acompaña el proceso y sirve como referencia para verificar el resultado.
 
----
 
-## 10. Errores frecuentes
+
+## Errores frecuentes
 
 **1. Especificar de manera demasiado vaga.**
 *Ejemplo:* "Los tickets deben gestionarse rápido." ¿Qué es rápido? *Cómo evitarlo:* reemplaza los adjetivos por condiciones medibles ("48 horas").
