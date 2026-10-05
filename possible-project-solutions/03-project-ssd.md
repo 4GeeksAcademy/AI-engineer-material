@@ -1,4 +1,4 @@
-# Guía de práctica: Spec-Driven Development en el Dashboard Financiero
+# Spec-Driven Development en el Dashboard Financiero
 
 > En este proyecto **no construyes** el dashboard. Escribes la **especificación** tan clara y tan comprobada que otra persona (o un coding agent) pueda construirlo sin hacerte una sola pregunta.
 
